@@ -8,5 +8,7 @@ class Sg_rol extends Model
 {
     protected $table = 'sg_rol';
 
-    protected $fillable = ['rol', 'nombre', 'estado'];
+    protected $fillable = ['rol', 'nombre'];
+
+    protected $primaryKey = 'id_rol';
 }

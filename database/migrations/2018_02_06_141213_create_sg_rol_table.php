@@ -17,7 +17,6 @@ class CreateSgRolTable extends Migration
             $table->increments('id_rol');
             $table->char('rol',8);
             $table->string('nombre',50);
-            $table->char('estado',1);
             $table->timestamps();
         });
     }

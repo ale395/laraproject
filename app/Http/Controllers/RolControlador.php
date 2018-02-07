@@ -6,81 +6,54 @@ use Illuminate\Http\Request;
 use App\Sg_rol;
 
 class RolControlador extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+{  
+
     public function index()
     {
         $roles = Sg_rol::all();
         return view('rol.index', compact('roles'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
+        return view('rol.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //Sg_rol::create($request->all());
+        Sg_rol::create($request->all())->save();
+        return redirect()->route('rol.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $rol = Sg_rol::find($id);
+        return view('rol.edit', compact('rol'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
-        //
+        $rol = Sg_rol::findOrFail($id);
+        
+        $rol->update($request->all());
+
+        /*$rol->update([
+            'rol' => $request->rol,
+            'nombre' => $request->nombre,
+            'estado' => $request->estado
+        ]);*/
+        return redirect()->route('rol.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $rol = Sg_rol::findOrFail($id);
+        $rol->delete();
+        return redirect()->route('rol.index');
     }
 }
