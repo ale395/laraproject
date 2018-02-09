@@ -14,4 +14,8 @@ Route::get('register', ['as' => 'register', function(){
 
 Route::resource('rol', 'RolControlador');
 
+Route::resource('modulo', 'ModuloControlador');
+
+Route::resource('formulario', 'FormularioControlador');
+
 Route::post('autenticar', 'UsuariosControlador@autenticar');
