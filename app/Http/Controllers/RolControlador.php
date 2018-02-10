@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Sg_rol;
+use App\Http\Requests\CreateRolRequest;
 
 class RolControlador extends Controller
 {  
@@ -19,7 +20,7 @@ class RolControlador extends Controller
         return view('rol.create');
     }
 
-    public function store(Request $request)
+    public function store(CreateRolRequest $request)
     {
         Sg_rol::create($request->all())->save();
         return redirect()->route('rol.index');

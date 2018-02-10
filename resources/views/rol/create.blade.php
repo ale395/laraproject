@@ -5,9 +5,19 @@
 	<form method="POST" action="{{ route('rol.store') }}">
 	{!! csrf_field() !!}
 
+		@if ($errors->any())
+		    <div class="alert alert-danger">
+		        <ul>
+		            @foreach ($errors->all() as $error)
+		                <li>{{ $error }}</li>
+		            @endforeach
+		        </ul>
+		    </div>
+		@endif
+
 		<div class="form-group">
 			<label>Rol
-				<input type="text" class="mayusculas" name="rol" value="{{ old('rol')}}">
+				<input type="text" name="rol" value="{{ old('rol')}}">
 			</label>
 		</div>
 

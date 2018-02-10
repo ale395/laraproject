@@ -26,7 +26,8 @@ class FormularioControlador extends Controller
      */
     public function create()
     {
-        //
+        $modulos = Sg_modulo::all();
+        return view('formulario.create', compact('modulos'));
     }
 
     /**
@@ -37,7 +38,8 @@ class FormularioControlador extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Sg_formulario::create($request->all())->save();
+        return redirect()->route('formulario.index');
     }
 
     /**
@@ -59,7 +61,9 @@ class FormularioControlador extends Controller
      */
     public function edit($id)
     {
-        //
+        $formulario = Sg_formulario::findOrFail($id);
+        $modulos = Sg_modulo::all();
+        return view('formulario.edit', compact('formulario', 'modulos'));
     }
 
     /**
@@ -71,7 +75,11 @@ class FormularioControlador extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $formulario = Sg_formulario::findOrFail($id);
+        
+        $formulario->update($request->all());
+
+        return redirect()->route('formulario.index');
     }
 
     /**
@@ -82,6 +90,8 @@ class FormularioControlador extends Controller
      */
     public function destroy($id)
     {
-        //
+        $formulario = Sg_formulario::findOrFail($id);
+        $formulario->delete();
+        return redirect()->route('formulario.index');
     }
 }

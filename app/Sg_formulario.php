@@ -14,7 +14,8 @@ class Sg_formulario extends Model
     protected $primaryKey = 'id_formulario';
 
     public function modulo(){
-    	//return $this->hasOne('App\Sg_modulo');
+
     	return $this->belongsTo(Sg_modulo::class, 'id_modulo');
+    	
     }
 }
