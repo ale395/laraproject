@@ -38,6 +38,7 @@
 								<li><a href="{{ url('rol') }}">Rol</a></li>
 								<li><a href="{{ url('modulo') }}">Modulo</a></li>
 								<li><a href="{{ url('formulario') }}">Formulario</a></li>
+								<li><a href="{{ url('paises') }}">País</a></li>
 							</ul>
 						</li>
 					</ul>

@@ -18,4 +18,7 @@ Route::resource('modulo', 'ModuloControlador');
 
 Route::resource('formulario', 'FormularioControlador');
 
-Route::post('autenticar', 'UsuariosControlador@autenticar');
+Route::resource('paises', 'PaisController', ['parameters' => [
+		'paises' => 'pais']]);
+
+//Route::post('autenticar', 'UsuariosControlador@autenticar');
