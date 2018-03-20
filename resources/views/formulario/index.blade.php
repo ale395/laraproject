@@ -1,8 +1,7 @@
 @extends('layout.layout')
 
 @section('contenido')
-	
-	
+
 	<table class="table table-hover table-striped">
 		<thead>
 			<tr>
@@ -11,7 +10,7 @@
 				<th>Módulo</th>
 				<th>Tipo</th>
 				<th>Acciones</th>
-			</tr>	
+			</tr>
 		</thead>
 		<tbody>
 			<a href="{{ route('formulario.create') }}">

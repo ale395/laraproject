@@ -12,13 +12,11 @@ Route::get('register', ['as' => 'register', function(){
 	return view('login.register');
 }]);
 
-Route::resource('rol', 'RolControlador');
-
-Route::resource('modulo', 'ModuloControlador');
-
-Route::resource('formulario', 'FormularioControlador');
-
 Route::resource('paises', 'PaisController', ['parameters' => [
 		'paises' => 'pais']]);
 
-//Route::post('autenticar', 'UsuariosControlador@autenticar');
+Route::resource('departamentos', 'DepartamentoController', ['parameters' => ['departamentos' => 'departamento']]);
+
+/*Route::get('/depar', function(){
+	return \App\Departamento::with('pais')->get();
+});*/

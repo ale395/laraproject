@@ -35,10 +35,8 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Formularios <b class="caret"></b></a>
 							<ul class="dropdown-menu">
-								<li><a href="{{ url('rol') }}">Rol</a></li>
-								<li><a href="{{ url('modulo') }}">Modulo</a></li>
-								<li><a href="{{ url('formulario') }}">Formulario</a></li>
-								<li><a href="{{ url('paises') }}">País</a></li>
+								<li><a href="{{ url('paises') }}">Paises</a></li>
+								<li><a href="{{ url('departamentos') }}">Departamentos</a></li>
 							</ul>
 						</li>
 					</ul>
